@@ -127,3 +127,14 @@ if filereadable(expand("~/.vimrc.local"))
   " noremap! jj <ESC>
   source ~/.vimrc.local
 endif
+
+"""""""""""""""""
+" Tern settings
+" """""""""""""""""
+" Bundle 'marijnh/tern_for_vim'
+" let g:tern_show_argument_hints='on_hold'
+" " and 
+" let g:tern_map_keys=1
+
+execute pathogen#infect()
+call pathogen#helptags()

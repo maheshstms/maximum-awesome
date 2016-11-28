@@ -10,7 +10,8 @@ inoremap jj <ESC>
 " gui settings
 if (&t_Co == 256 || has('gui_running'))
   if ($TERM_PROGRAM == 'iTerm.app')
-    colorscheme solarized
+    "colorscheme solarized
+    colorscheme desert
   else
     colorscheme desert
   endif
@@ -31,3 +32,17 @@ function! s:RemoveConflictingAlignMaps()
 endfunction
 command! -nargs=0 RemoveConflictingAlignMaps call s:RemoveConflictingAlignMaps()
 silent! autocmd VimEnter * RemoveConflictingAlignMaps
+
+" Autocomplete popup
+let g:ycm_add_preview_to_completeopt=0
+let g:ycm_confirm_extra_conf=0
+set completeopt-=preview
+
+ 
+" This does what it says on the tin. It will check your file on open too, not
+" just on save.
+" You might not want this, so just leave it out if you don't.
+let g:syntastic_check_on_open=1
+
+" Remove background of code for JSLint errors
+hi clear SpellBad

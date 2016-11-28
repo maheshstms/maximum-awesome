@@ -130,11 +130,13 @@ namespace :install do
   task :brew_cask do
     step 'Homebrew Cask'
     system('brew untap phinze/cask') if system('brew tap | grep phinze/cask > /dev/null')
-    unless system('brew tap | grep caskroom/cask > /dev/null') || system('brew tap caskroom/homebrew-cask')
+    #unless system('brew tap | grep caskroom/cask > /dev/null') || system('brew tap caskroom/homebrew-cask')
+    unless system('brew tap | grep caskroom/cask > /dev/null') || system('brew tap caskroom/cask')
       abort "Failed to tap caskroom/homebrew-cask in Homebrew."
     end
 
-    brew_install 'brew-cask'
+    #brew_install 'caskroom/cask'
+    #brew_install 'brew-cask'
   end
 
   desc 'Install The Silver Searcher'
@@ -224,7 +226,10 @@ LINKED_FILES = filemap(
   'vim'           => '~/.vim',
   'tmux.conf'     => '~/.tmux.conf',
   'vimrc'         => '~/.vimrc',
-  'vimrc.bundles' => '~/.vimrc.bundles'
+  'vimrc.bundles' => '~/.vimrc.bundles',
+  'vimrc.local'         => '~/.vimrc.local',
+  'vimrc.bundles.local' => '~/.vimrc.bundles.local',
+  'tmux.conf.local'     => '~/.tmux.conf.local'
 )
 
 desc 'Install these config files.'

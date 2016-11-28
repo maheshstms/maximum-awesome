@@ -1,0 +1,6 @@
+Plugin 'jelera/vim-javascript-syntax'
+"Plugin 'ternjs/tern_for_vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'marijnh/tern_for_vim'
+Plugin 'Raimondi/delimitMate'
+Plugin 'editorconfig/editorconfig-vim'
